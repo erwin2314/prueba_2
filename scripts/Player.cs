@@ -103,10 +103,6 @@ public partial class Player : CharacterBody2D
 			else
 			{
 				// Movimiento normal y salto
-				if (!IsOnFloor())
-				{
-					velocity += GetGravity() * (float)delta;
-				}
 				if (Input.IsActionJustPressed("Jump") && IsOnFloor())
 				{
 					animatedSprite2D.Play("jump");

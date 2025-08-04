@@ -5,9 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://bahwffgjet1a0" path="res://scenes/platform.tscn" id="3_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://yt26cl2pjprf" path="res://scenes/coin.tscn" id="4_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://cgqampovnhvnq" path="res://scenes/kill_zone.tscn" id="5_iywne"]
-[ext_resource type="PackedScene" uid="uid://crkhnhmqmysq6" path="res://scenes/slime.tscn" id="6_p57ef"]
+[ext_resource type="PackedScene" path="res://scenes/slime.tscn" id="6_p57ef"]
 [ext_resource type="FontFile" uid="uid://b32sf14060kjh" path="res://assets/fonts/PixelOperator8.ttf" id="7_u5sy4"]
-[ext_resource type="PackedScene" uid="uid://b3dpterari2l0" path="res://scenes/power_up.tscn" id="8_gee14"]
+[ext_resource type="PackedScene" path="res://scenes/power_up.tscn" id="8_gee14"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iywne"]
 texture = ExtResource("2_yqjtg")
