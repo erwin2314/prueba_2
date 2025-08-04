@@ -23,6 +23,11 @@ public partial class KillZone : Area2D
         jugador = body;
         camera2D = jugador.GetNode<Camera2D>("Camera2D");
         jugadorMuerto = true;
+
+        if (body is Player player)
+        {
+            player.ReproducirSFXHurt();
+        }
     }
     public void RegresarAUnPunto()
     {

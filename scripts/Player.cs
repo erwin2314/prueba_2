@@ -25,14 +25,23 @@ public partial class Player : CharacterBody2D
 	public AnimatedSprite2D animatedSprite2D;
 	public int puntuacion = 0;
 	public Label label;
+	public AudioStreamPlayer2D jumpSFX;
+	public AudioStreamPlayer2D hurtSFX;
 
 	public void AumentarPuntuacion()
 	{
 		puntuacion += 1;
 	}
 
+	public void ReproducirSFXHurt()
+	{
+		hurtSFX.Play();
+	}
+
 	public override void _Ready()
 	{
+		jumpSFX = GetNode<AudioStreamPlayer2D>("JumpSFX");
+		hurtSFX = GetNode<AudioStreamPlayer2D>("HurtSFX");
 		label = GetNode<Label>("%Label5");
 		animatedSprite2D = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
 		timer = GetNode<Timer>("Timer");
@@ -108,12 +117,14 @@ public partial class Player : CharacterBody2D
 				{
 					animatedSprite2D.Play("jump");
 					velocity.Y = -JumpVelocity;
+					jumpSFX.Play();
 				}
 				else if (Input.IsActionJustPressed("Jump") && CanDoubleJump)
 				{
 					animatedSprite2D.Play("doubleJump");
 					velocity.Y = -JumpVelocity;
 					CanDoubleJump = false;
+					jumpSFX.Play();
 				}
 				
 				if (direction != Vector2.Zero)
