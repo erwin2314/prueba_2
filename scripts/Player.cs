@@ -23,9 +23,17 @@ public partial class Player : CharacterBody2D
 	public float dashSpeedMultiplier = 2f;
 	public Timer timer;
 	public AnimatedSprite2D animatedSprite2D;
+	public int puntuacion = 0;
+	public Label label;
+
+	public void AumentarPuntuacion()
+	{
+		puntuacion += 1;
+	}
 
 	public override void _Ready()
 	{
+		label = GetNode<Label>("%Label5");
 		animatedSprite2D = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
 		timer = GetNode<Timer>("Timer");
 		timer.Timeout += RecuperarDash;
@@ -34,6 +42,7 @@ public partial class Player : CharacterBody2D
 
 	public override void _PhysicsProcess(double delta)
 	{
+		label.Text = "Puntuacion: " + puntuacion.ToString();
 		Vector2 velocity = Velocity;
 		
 
