@@ -74,6 +74,7 @@ public partial class Player : CharacterBody2D
 		if (isDashing)
 		{
 			dashTimer -= (float)delta * 1000f; // dashTime y dashTimer están en ms
+			velocity.Y = 0;
 			velocity.X = direction.X * (Speed * dashSpeedMultiplier);
 			animatedSprite2D.Play("dash");
 			if (dashTimer <= 0f)
