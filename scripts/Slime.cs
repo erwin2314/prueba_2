@@ -5,6 +5,7 @@ public partial class Slime : Node2D
 {
     [Export]
     public float speed = 60;
+    [Export]
     public float direction = 1; //1 es para la derecha, -1 para la izquierda
     public RayCast2D rayCast2DRight;
     public RayCast2D rayCast2DLeft;
